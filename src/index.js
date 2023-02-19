@@ -1,14 +1,13 @@
 import express from "express";
 import employeesRoutes from "./routes/employees.routes.js";
 import indexRouters from "./routes/index.routes.js";
-import "./config.js"
+import {PORT} from "./config.js"
 
 const app = express();
 
 
 //Settings
 app.set("appName", "miProyect");
-app.set("port", 3000);
 
 //Middlewares
 app.use(express.json())
@@ -24,5 +23,5 @@ app.use((req,res) =>{
 })
 
 
-app.listen(app.set("port"));
-console.log(`Run ${app.set("appName")} in port ${app.set("port")}`);
+app.listen(PORT);
+console.log(`Run ${app.set("appName")} in port ${PORT}`);
